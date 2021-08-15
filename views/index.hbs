@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet">
+<style>
+    @keyframes header {
+        0%{
+            transform: translateY(-100%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
+    }
+    @keyframes product {
+        0%{
+            transform: translateY(100%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
+    }
+    .search {
+        display: none;
+    }
+
+    header {
+        background-color: rgb(26, 148, 255);
+        animation: header 2s ;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: 60px;
+        height: 40px;
+    }
+
+    .lg-ship {
+        width: 83px;
+        height: 12px;
+    }
+
+    .cart-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .input-search {
+        position: relative;
+    }
+
+    .display {
+        width: 100%;
+        border: 1px solid;
+        position: absolute;
+        background: white;
+    }
+
+    a {
+        color: white;
+    }
+
+    .card {
+        width: 20%;
+        margin-left: 5%;
+    }
+
+    .none {
+        display: none;
+    }
+
+    .font {
+        color: white;
+        font-size: 26px;
+    }
+
+    .login {
+        position: relative;
+    }
+
+    .clip {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background-color: white;
+        display: none;
+    }
+
+    .manage {
+        font-family: 'STIX Two Text', serif;
+        font-size: 18px;
+        display: inline-block;
+        text-align: center;
+        color: black;
+        font-weight: 500;
+        width: 100px;
+        height: 50px;
+        top: 43px;
+        position: absolute;
+        display: none;
+        background-color: white;
+        border: 1px solid lightgray;
+        transition: 1s;
+    }
+    .manage:hover{
+        color: aqua;
+    }
+    .exit{
+        color: rgba(0, 255, 255, 0.884);
+        font-family: 'STIX Two Text', serif;
+        transition: 1s;
+    }
+    .exit:hover{
+        color: rgb(76, 76, 243);
+    }
+    .searchInput{
+        border-radius: 15px;
+        border: none;
+        height: 30px;
+    }
+    .btn-search{
+        border-radius: 10px;
+        border: none;
+        background-color: azure;
+        
+    }
+    .insert{
+        transition: 1s;
+    }
+    .insert:hover{
+        background-color: chocolate;
+    }
+    .card-img-top{
+        transition: 1s;
+    }
+    .card-img-top:hover{
+        transform: scale(1.2);
+    }
+    .content{
+        animation: product 2s ;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container flex">
+            <div class="logo">
+                <a href="/"><img class="logo-img"
+                        src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png"
+                        alt=""></a><br>
+                <img class="lg-ship"
+                    src="https://salt.tikicdn.com/ts/upload/e5/1d/22/61ff572362f08ead7f34ce410a4a6f96.png" alt="">
+            </div>
+            <div class="input-search">
+                <form action="/search" method="post">
+                    <input type="text" class="searchInput pl-4" placeholder="search" name="txtSearch">
+                    <input type="submit" class="btn-search"  value="Search">
+                </form>
+
+                {{!-- <div class="display">
+
+                </div> --}}
+            </div>
+            <div class="cart">
+                <img class="cart-icon"
+                    src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png" alt="">
+
+            </div>
+            <div class="login">
+                <span class="icon"><i class="fa fa-user-circle-o font" aria-hidden="true"></i></span><br>
+                <div class="clip">
+
+                </div>
+                <div class="manage"> <span>Manage product</span> </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5 none">
+        <form class="form-horizontal" action="/insert" method="POST">
+            <fieldset>
+
+
+                <legend>PRODUCTS <br> <span class="exit">Exit</span></legend>
+                
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="product_id">PRODUCT NAME</label>
+                    <div class="col-md-4">
+                        <input id="product_id" name="txtName" placeholder="PRODUCT NAME" class="form-control input-md"
+                            required="" type="text">
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="product_name">PRICE</label>
+                    <div class="col-md-4">
+                        <input id="product_name" name="Price" placeholder="PRICE" class="form-control input-md"
+                            required="" type="text">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="product_name">PRODUCT IMG</label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" name="link" placeholder="Input link">
+                        
+                        <input type="submit" class="form-control mt-2 insert" value="Insert">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="container">
+
+
+        <div class="content mt-5" style="display: flex; ">
+
+            {{#each data}}
+
+            <div class="card">
+                <img class="card-img-top" src="{{img}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">{{price}}</p>
+                    <a href="/delete?id={{_id}}" class="text-primary none">Delete</a>
+                </div>
+            </div>
+
+
+
+
+
+            {{/each}}
+
+        </div>
+
+
+
+
+    </div>
+    <script>
+        $('.display').keyup(function (e) {
+
+            if (e.target.value == "") {
+                $('.search').css('display', 'none');
+                $('body').css('background', 'white')
+            } else {
+                $('.search').css('display', 'block');
+                $('body').css('background', 'rgba(36, 30, 30,0.5)')
+            }
+
+        });
+        var IsOpen = false;
+        $('.icon').click(function () {
+            
+            if (IsOpen == false) {
+                $('.manage').css('display', 'flex');
+                $('.clip').css('display', 'flex');
+                IsOpen = true;
+            }
+            else {
+                $('.manage').css('display', 'none');
+                $('.clip').css('display', 'none');
+                IsOpen = false;
+            }
+        
+            
+        });
+        $('.manage').click(function () {
+
+            $('.none').css('display','block')
+        })
+        $('.exit').click(function () {
+
+            $('.none').css('display','none')
+        })
+    </script>
+
+</body>
+
+</html>
