@@ -18,13 +18,16 @@ app.post('/insert', async(req, res) => {
     const nameInput = req.body.txtName;
     const Price = req.body.Price;
     const linkImg = req.body.link;
-    const newStudent = { name: nameInput, price: Price, img: linkImg };
-    const client = await MongoClient.connect(url);
-    const dbo = client.db("GCH0803DB");
-    const newS = await dbo.collection("students").insertOne(newStudent);
-    console.log("Gia tri id moi duoc insert la: ", newS.insertedId.toHexString());
+    if(Price > 0){
+        const newStudent = { name: nameInput, price: Price, img: linkImg };
+        const client = await MongoClient.connect(url);
+        const dbo = client.db("GCH0803DB");
+        const newS = await dbo.collection("students").insertOne(newStudent);
+        console.log("Gia tri id moi duoc insert la: ", newS.insertedId.toHexString());
     //chuyen huong den file Index
-
+    }
+    
+    
     res.redirect('/');
 })
 app.get('/delete', async(req, res) => {
