@@ -9,47 +9,52 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet">
-    <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet">
+<style>
     @keyframes header {
-        0%{
+        0% {
             transform: translateY(-100%);
         }
-        100%{
+
+        100% {
             transform: translateY(0%);
         }
     }
+
     @keyframes product {
-        0%{
+        0% {
             transform: translateY(100%);
         }
-        100%{
+
+        100% {
             transform: translateY(0%);
         }
     }
-    body{
+
+    body {
         background-image: url(https://metruyenchu.com/assets/images/home-bg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
     }
+
     .search {
         display: none;
     }
 
     header {
         background-color: rgb(26, 148, 255);
-        animation: header 2s ;
+        animation: header 2s;
     }
 
     .flex {
@@ -132,45 +137,76 @@
         transition: 1s;
         z-index: 10000;
     }
-    .manage:hover{
+
+    .manage:hover {
         color: aqua;
     }
-    .exit{
+
+    .exit {
         color: rgba(0, 255, 255, 0.884);
         font-family: 'STIX Two Text', serif;
         transition: 1s;
     }
-    .exit:hover{
+
+    .exit:hover {
         color: rgb(76, 76, 243);
     }
-    .searchInput{
+
+    .searchInput {
         border-radius: 15px;
         border: none;
         height: 30px;
     }
-    .searchInput:focus{
+
+    .searchInput:focus {
         border: none;
     }
-    .btn-search{
+
+    .btn-search {
         border-radius: 10px;
         border: none;
         background-color: azure;
-        
+
     }
-    .insert{
+
+    .insert {
         transition: 1s;
     }
-    .insert:hover{
+
+    .insert:hover {
         background-color: chocolate;
     }
-    .card-img-top{
+
+    .card-img-top {
         transition: 1s;
     }
-    .card-img-top:hover{
+
+    .card-img-top:hover {
         transform: scale(1.2);
     }
-    .content{
-        animation: product 2s ;
+
+    .content {
+        animation: product 2s;
+    }
+
+    .atn {
+        font-family: 'STIX Two Text', serif;
+        color: whitesmoke;
+        font-size: 22px;
+        font-weight: 500;
+        transition: 1s;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    .atn:hover {
+        
+        transform: scale(1.4);
+    }
+    .align{
+        margin: auto;
+        font-family: 'STIX Two Text', serif;
+        font-size: 22px;
     }
 </style>
 
@@ -178,16 +214,18 @@
     <header>
         <div class="container flex">
             <div class="logo">
-                <a href="/"><img class="logo-img"
-                        src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png"
-                        alt=""></a><br>
+                <div class="atn">
+                    <a href="/">
+                        ATN Company
+                    </a><br>
+                </div>
                 <img class="lg-ship"
                     src="https://salt.tikicdn.com/ts/upload/e5/1d/22/61ff572362f08ead7f34ce410a4a6f96.png" alt="">
             </div>
             <div class="input-search">
                 <form action="/search" method="post">
                     <input type="text" class="searchInput pl-4" placeholder="search" name="txtSearch">
-                    <input type="submit" class="btn-search"  value="Search">
+                    <input type="submit" class="btn-search" value="Search">
                 </form>
 
                 {{!-- <div class="display">
@@ -215,7 +253,7 @@
 
 
                 <legend>PRODUCTS <br> <span class="exit">Exit</span></legend>
-                
+
 
 
                 <div class="form-group">
@@ -234,6 +272,7 @@
                         <input id="product_name" name="Price" placeholder="PRICE" class="form-control input-md"
                             required="" type="text">
 
+
                     </div>
                 </div>
 
@@ -241,8 +280,10 @@
                     <label class="col-md-4 control-label" for="product_name">PRODUCT IMG</label>
                     <div class="col-md-4">
                         <input class="form-control" type="text" name="link" placeholder="Input link">
-                        
+
                         <input type="submit" class="form-control mt-2 insert" value="Insert">
+
+                       
                     </div>
                 </div>
             </fieldset>
@@ -252,7 +293,7 @@
 
 
         <div class="content mt-5" style="display: flex; flex-wrap:wrap">
-
+            <span class="align">{{error.price}} <br> {{error.linkImg}} <br>{{error.nameInput}}</span>
             {{#each data}}
 
             <div class="card mb-5">
@@ -264,10 +305,6 @@
                 </div>
             </div>
 
-
-
-
-
             {{/each}}
 
         </div>
@@ -276,21 +313,13 @@
 
 
     </div>
+    <a href=""></a>
     <script>
-        $('.display').keyup(function (e) {
 
-            if (e.target.value == "") {
-                $('.search').css('display', 'none');
-                $('body').css('background', 'white')
-            } else {
-                $('.search').css('display', 'block');
-                $('body').css('background', 'rgba(36, 30, 30,0.5)')
-            }
 
-        });
         var IsOpen = false;
         $('.icon').click(function () {
-            
+
             if (IsOpen == false) {
                 $('.manage').css('display', 'flex');
                 $('.clip').css('display', 'flex');
@@ -301,16 +330,16 @@
                 $('.clip').css('display', 'none');
                 IsOpen = false;
             }
-        
-            
+
+
         });
         $('.manage').click(function () {
 
-            $('.none').css('display','block')
+            $('.none').css('display', 'block')
         })
         $('.exit').click(function () {
 
-            $('.none').css('display','none')
+            $('.none').css('display', 'none')
         })
     </script>
 
