@@ -23,6 +23,7 @@ app.post('/insert', async (req, res) => {
     const dbo = client.db("GCH0803DB");
     var errorr = {};
     var isEr = false;
+    const allStudents = await dbo.collection("students").find({}).toArray();
     if (nameInput.length < 5) {
 
         errorr.nameInput = 'Name must be more than 5 chracters';
@@ -39,7 +40,7 @@ app.post('/insert', async (req, res) => {
         isEr = true;
     }
     if (isEr) {
-        res.render('index', { error: errorr })
+        res.render('index', { error: errorr, data: allStudents }  )
     }
     else {
 

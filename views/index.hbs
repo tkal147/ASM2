@@ -196,17 +196,32 @@
         font-weight: 500;
         transition: 1s;
     }
-    a:hover{
+
+    a:hover {
         text-decoration: none;
     }
+
     .atn:hover {
-        
+
         transform: scale(1.4);
     }
-    .align{
+
+    .align {
         margin: auto;
         font-family: 'STIX Two Text', serif;
         font-size: 22px;
+    }
+    .align{
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        
+    }
+    .error{
+        background-color: white;
+        z-index: 1000;
+        width: 100%;
     }
 </style>
 
@@ -283,7 +298,7 @@
 
                         <input type="submit" class="form-control mt-2 insert" value="Insert">
 
-                       
+
                     </div>
                 </div>
             </fieldset>
@@ -292,8 +307,10 @@
     <div class="container">
 
 
-        <div class="content mt-5" style="display: flex; flex-wrap:wrap">
-            <span class="align">{{error.price}} <br> {{error.linkImg}} <br>{{error.nameInput}}</span>
+        <div class="content mt-5" style="display: flex; flex-wrap:wrap; position:relative;">
+            <div class="error mb-4" >
+                <span class="align">{{error.price}} <br> {{error.linkImg}} <br>{{error.nameInput}}</span>
+            </div>
             {{#each data}}
 
             <div class="card mb-5">
